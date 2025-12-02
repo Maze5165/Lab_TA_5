@@ -1,119 +1,118 @@
-# -*- coding: utf-8 -*-
 import re
 from collections import Counter
 
-print("=== ЗАВДЮВАННЯ 2: Демонстрація методів ===")
+print("=== Р—РђР’Р”Р®Р’РђРќРќРЇ 2: Р”РµРјРѕРЅСЃС‚СЂР°С†С–СЏ РјРµС‚РѕРґС–РІ ===")
 
-print("\n--- Списки ---")
+print("\n--- РЎРїРёСЃРєРё ---")
 my_list = [3, 1, 4, 1, 5]
-print(f"Початковий список: {my_list}")
+print(f"РџРѕС‡Р°С‚РєРѕРІРёР№ СЃРїРёСЃРѕРє: {my_list}")
 
 my_list.append(9)
 my_list.sort()
-print(f"Після append(9) та sort(): {my_list}")
+print(f"РџС–СЃР»СЏ append(9) С‚Р° sort(): {my_list}")
 
 sliced = my_list[1:4]
-print(f"Зріз [1:4]: {sliced}")
+print(f"Р—СЂС–Р· [1:4]: {sliced}")
 
 my_list.remove(1)
-print(f"Після remove(1): {my_list}")
+print(f"РџС–СЃР»СЏ remove(1): {my_list}")
 
-print("\n--- Кортежі ---")
+print("\n--- РљРѕСЂС‚РµР¶С– ---")
 my_tuple = (10, 20, 30)
-print(f"Кортеж: {my_tuple}")
-print(f"Елемент з індексом 1: {my_tuple[1]}")
+print(f"РљРѕСЂС‚РµР¶: {my_tuple}")
+print(f"Р•Р»РµРјРµРЅС‚ Р· С–РЅРґРµРєСЃРѕРј 1: {my_tuple[1]}")
 
 try:
     my_tuple[0] = 100
 except TypeError as e:
-    print(f"Спроба змінити кортеж викликала помилку: {e}")
+    print(f"РЎРїСЂРѕР±Р° Р·РјС–РЅРёС‚Рё РєРѕСЂС‚РµР¶ РІРёРєР»РёРєР°Р»Р° РїРѕРјРёР»РєСѓ: {e}")
 
-print("\n--- Множини ---")
+print("\n--- РњРЅРѕР¶РёРЅРё ---")
 set_a = {1, 2, 3, 4}
 set_b = {3, 4, 5, 6}
-print(f"Множина A: {set_a}, Множина B: {set_b}")
+print(f"РњРЅРѕР¶РёРЅР° A: {set_a}, РњРЅРѕР¶РёРЅР° B: {set_b}")
 
 union_set = set_a.union(set_b)
 inter_set = set_a.intersection(set_b)
 
-print(f"Об'єднання (A | B): {union_set}")
-print(f"Перетин (A & B): {inter_set}")
+print(f"РћР±'С”РґРЅР°РЅРЅСЏ (A | B): {union_set}")
+print(f"РџРµСЂРµС‚РёРЅ (A & B): {inter_set}")
 
-print("\n--- Словники ---")
+print("\n--- РЎР»РѕРІРЅРёРєРё ---")
 my_dict = {'name': 'Student', 'course': 1}
-print(f"Словник: {my_dict}")
+print(f"РЎР»РѕРІРЅРёРє: {my_dict}")
 
 my_dict['grade'] = 95
 keys = list(my_dict.keys())
 
-print(f"Оновлений словник: {my_dict}")
-print(f"Список ключів: {keys}")
+print(f"РћРЅРѕРІР»РµРЅРёР№ СЃР»РѕРІРЅРёРє: {my_dict}")
+print(f"РЎРїРёСЃРѕРє РєР»СЋС‡С–РІ: {keys}")
 
 
 print("\n" + "="*40 + "\n")
 
 
-print("=== ЗАВДАННЯ 3: Аналіз тексту ===")
+print("=== Р—РђР’Р”РђРќРќРЇ 3: РђРЅР°Р»С–Р· С‚РµРєСЃС‚Сѓ ===")
 text = "Case-insensitive matching matters."
-print(f"Вхідний текст: '{text}'\n")
+print(f"Р’С…С–РґРЅРёР№ С‚РµРєСЃС‚: '{text}'\n")
 
 words_list = re.findall(r"\w+", text.lower())
-print(f"1. Список слів: {words_list}")
+print(f"1. РЎРїРёСЃРѕРє СЃР»С–РІ: {words_list}")
 
 unique_words = set(words_list)
-print(f"2. Множина унікальних слів: {unique_words}")
+print(f"2. РњРЅРѕР¶РёРЅР° СѓРЅС–РєР°Р»СЊРЅРёС… СЃР»С–РІ: {unique_words}")
 
 sorted_words = tuple(sorted(words_list, key=len))
-print(f"3. Кортеж слів за довжиною: {sorted_words}")
+print(f"3. РљРѕСЂС‚РµР¶ СЃР»С–РІ Р·Р° РґРѕРІР¶РёРЅРѕСЋ: {sorted_words}")
 
 word_counts = dict(Counter(words_list))
-print(f"4. Словник частот: {word_counts}")
+print(f"4. РЎР»РѕРІРЅРёРє С‡Р°СЃС‚РѕС‚: {word_counts}")
 
-print(f"5. Статистика:")
-print(f"   - Загальна кількість слів: {len(words_list)}")
-print(f"   - Унікальних слів: {len(unique_words)}")
+print(f"5. РЎС‚Р°С‚РёСЃС‚РёРєР°:")
+print(f"   - Р—Р°РіР°Р»СЊРЅР° РєС–Р»СЊРєС–СЃС‚СЊ СЃР»С–РІ: {len(words_list)}")
+print(f"   - РЈРЅС–РєР°Р»СЊРЅРёС… СЃР»С–РІ: {len(unique_words)}")
 top_5 = sorted(word_counts.items(), key=lambda item: item[1], reverse=True)[:5]
-print(f"   - Топ слів за частотою: {top_5}")
+print(f"   - РўРѕРї СЃР»С–РІ Р·Р° С‡Р°СЃС‚РѕС‚РѕСЋ: {top_5}")
 
 
 print("\n" + "="*40 + "\n")
 
 
-print("=== ЗАВДАННЯ 4: Обробка числового списку ===")
+print("=== Р—РђР’Р”РђРќРќРЇ 4: РћР±СЂРѕР±РєР° С‡РёСЃР»РѕРІРѕРіРѕ СЃРїРёСЃРєСѓ ===")
 numbers = [6, 6, 6, 3, 9, 12]
-print(f"Вхідний список: {numbers}\n")
+print(f"Р’С…С–РґРЅРёР№ СЃРїРёСЃРѕРє: {numbers}\n")
 
 seen = set()
 no_dups_ordered = [x for x in numbers if not (x in seen or seen.add(x))]
-print(f"1. Список без дублікатів: {no_dups_ordered}")
+print(f"1. РЎРїРёСЃРѕРє Р±РµР· РґСѓР±Р»С–РєР°С‚С–РІ: {no_dups_ordered}")
 
 even_set = {x for x in numbers if x % 2 == 0}
-print(f"2. Множина парних чисел: {even_set}")
+print(f"2. РњРЅРѕР¶РёРЅР° РїР°СЂРЅРёС… С‡РёСЃРµР»: {even_set}")
 
 sorted_nums = sorted(numbers)
 min_5_tuple = tuple(sorted_nums[:5])
-print(f"3. Кортеж 5 мінімальних чисел: {min_5_tuple}")
+print(f"3. РљРѕСЂС‚РµР¶ 5 РјС–РЅС–РјР°Р»СЊРЅРёС… С‡РёСЃРµР»: {min_5_tuple}")
 
 pos_dict = {i: val for i, val in enumerate(numbers)}
-print(f"4. Словник (позиція: значення): {pos_dict}")
+print(f"4. РЎР»РѕРІРЅРёРє (РїРѕР·РёС†С–СЏ: Р·РЅР°С‡РµРЅРЅСЏ): {pos_dict}")
 
-print(f"5. Статистика:")
-print(f"   - Кількість елементів: {len(numbers)}")
-print(f"   - Кількість дублікатів: {len(numbers) - len(set(numbers))}")
-print(f"   - Мін: {min(numbers)}, Макс: {max(numbers)}")
+print(f"5. РЎС‚Р°С‚РёСЃС‚РёРєР°:")
+print(f"   - РљС–Р»СЊРєС–СЃС‚СЊ РµР»РµРјРµРЅС‚С–РІ: {len(numbers)}")
+print(f"   - РљС–Р»СЊРєС–СЃС‚СЊ РґСѓР±Р»С–РєР°С‚С–РІ: {len(numbers) - len(set(numbers))}")
+print(f"   - РњС–РЅ: {min(numbers)}, РњР°РєСЃ: {max(numbers)}")
 
 
 print("\n" + "="*40 + "\n")
 
 
-print("=== ЗАВДАННЯ 5 ===")
-print("Умова: Є кортеж температур за тиждень. Створити множину унікальних значень і середню температуру.")
+print("=== Р—РђР’Р”РђРќРќРЇ 5 ===")
+print("РЈРјРѕРІР°: Р„ РєРѕСЂС‚РµР¶ С‚РµРјРїРµСЂР°С‚СѓСЂ Р·Р° С‚РёР¶РґРµРЅСЊ. РЎС‚РІРѕСЂРёС‚Рё РјРЅРѕР¶РёРЅСѓ СѓРЅС–РєР°Р»СЊРЅРёС… Р·РЅР°С‡РµРЅСЊ С– СЃРµСЂРµРґРЅСЋ С‚РµРјРїРµСЂР°С‚СѓСЂСѓ.")
 
 temps_tuple = (18, 20, 18, 22, 21, 20, 19)
-print(f"Вхідний кортеж температур: {temps_tuple}")
+print(f"Р’С…С–РґРЅРёР№ РєРѕСЂС‚РµР¶ С‚РµРјРїРµСЂР°С‚СѓСЂ: {temps_tuple}")
 
 unique_temps = set(temps_tuple)
-print(f"Множина унікальних температур: {unique_temps}")
+print(f"РњРЅРѕР¶РёРЅР° СѓРЅС–РєР°Р»СЊРЅРёС… С‚РµРјРїРµСЂР°С‚СѓСЂ: {unique_temps}")
 
 avg_temp = sum(temps_tuple) / len(temps_tuple)
-print(f"Середня температура: {avg_temp:.2f}")
+print(f"РЎРµСЂРµРґРЅСЏ С‚РµРјРїРµСЂР°С‚СѓСЂР°: {avg_temp:.2f}")
